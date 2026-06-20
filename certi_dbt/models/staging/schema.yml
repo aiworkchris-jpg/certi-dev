@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_claims
+    columns:
+      - name: claim_id
+        tests:
+          - unique
+          - not_null
+      - name: claim_type
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['damaged', 'non_receipt', 'theft', 'false_claim']
+
+  - name: stg_shipments
+    columns:
+      - name: shipment_id
+        tests:
+          - unique
+          - not_null
+      - name: item_value
+        tests:
+          - not_null

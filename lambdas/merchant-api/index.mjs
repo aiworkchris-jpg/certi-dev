@@ -229,7 +229,7 @@ export const handler = async (event) => {
       );
 
       if (shipCheck.rows.length === 0) return notFound('Shipment not found');
-      if (!['failed', 'in_transit', 'delivered'].includes(shipCheck.rows[0].status)) {
+      if (!['failed', 'in_transit', 'delivered','claimed'].includes(shipCheck.rows[0].status)) {
         return badRequest('Shipment is not in a claimable status');
       }
 

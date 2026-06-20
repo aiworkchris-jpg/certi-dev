@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: certi
+    database: certi
+    schema: public
+    tables:
+      - name: claims
+      - name: decisions
+      - name: shipments
+      - name: users
+      - name: delivery_companies
+      - name: sensor_events
